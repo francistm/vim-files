@@ -7,3 +7,5 @@ elseif has("win32")
 	set guifont=Bitstream\ Vera\ Sans\ Mono:h12:cANSI
 	set guifontwide=YaHei\ Mono:h11:cGB2312
 endif
+
+colorscheme yytextmate

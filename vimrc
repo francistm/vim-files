@@ -1,4 +1,5 @@
 syntax on
+colorscheme ekvoli
 
 set ruler
 set showcmd
@@ -19,5 +20,3 @@ set softtabstop=4
 set encoding=utf-8
 set langmenu=zh_CN.UTF-8
 set fileencodings=ucs-bom,utf-8,utf-16,cp936,gb18030,big5,euc-jp,euc-kr,latin1
-
-colorscheme yytextmate
