@@ -1,6 +1,7 @@
 
 if has("mac")
 	set guifont=Monaco:h14
+	set lines=32 columns=116
 elseif has("win32")
 	set guioptions-=m
 
@@ -16,8 +17,7 @@ elseif has("win32")
 
 endif
 
-colorscheme yytextmate
+colorscheme peachpuff
 
 set guioptions-=T
-set lines=32 columns=116
 set langmenu=zh_CN.UTF-8

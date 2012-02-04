@@ -1,5 +1,5 @@
 syntax on
-colorscheme ekvoli
+colorscheme ron
 
 filetype on
 filetype plugin on
@@ -21,6 +21,7 @@ set nocompatible
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set foldmethod=marker
 
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,utf-16,cp936,gb18030,big5,euc-jp,euc-kr,latin1
