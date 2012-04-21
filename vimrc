@@ -26,4 +26,4 @@ set foldmethod=marker
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,utf-16,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
-:au BufRead,BuFNewFile *.md,*.mkd set wrap
+:au BufRead,BuFNewFile *.{md,mkd,mkdn,mdwn,mdown,markdown} set wrap
