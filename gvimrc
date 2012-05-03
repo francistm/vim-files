@@ -19,5 +19,6 @@ endif
 
 colorscheme peachpuff
 
+set nobackup
 set guioptions-=T
 set langmenu=zh_CN.UTF-8
