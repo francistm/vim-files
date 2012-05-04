@@ -213,51 +213,48 @@ snippet fun
 snippet array
 	$${1:arrayName} = array('${2}' => ${3});${4}
 
-# cjui dialog
-snippet dia
-	<?php $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
-		'id' => '${1:dialogId}',
-		'options' => array(
-			'autoOpen' => true,
-			${2:options},
-		),
-	)); ?>
-	<!-- ${3:dialogContent} -->
-	<?php $this->endWidget(); ?>
-	${4}
+snippet ar
+	<?php
 
-# yii dao
-snippet dao
-	$db = Yii::app()->db;
-	$sql = '${1:sql}';
-	$result = $db->createCommand($sql)
-	             ->bindParam('${2}', ${3})
-				 ->queryAll();
+	/**
+	 * this is the model class for table "{{${1:className}}}".
+	 */
+	class ${2:className} extends CActiveRecord
+	{
+	    public static function model($className=__CLASS__)
+	    {
+			return parent::model($className);
+	    }
 
-# yii cactiveform
-snippet activeform
-	<?php $${1:formName} = $this->beginWidget('CActiveForm'); ?>
-	<?php $this->endWidget(); ?>
+	    public function tableName()
+	    {
+			return '{{${3:tableName}}}';
+	    }
 
-snippet textfield
-	<?php echo $${1:formName}->textField(${2:modelName}, '${3:attribute}'); ?>${4}
+	    public function rules()
+	    {
+			return array(
+			);
+	    }
 
-snippet textfield-class
-	<?php echo $${1:formName}->textField(${2:modelName}, '${3:attribute}', array(
-		'class' => '${4:class}',
-	)); ?>
+	    public function relations()
+	    {
+			return array(
+			);
+	    }
 
-snippet chtml-link
-	<?php echo CHtml::link(${1:text}, ${2:href}); ?>${3}
-	${3}
-snippet chtml-link-class
-	<?php echo CHtml::link('${1:text}', '${2:href}', array(
-		'class' => '${3:class}',
-	)); ?>
-	${4}
+	    public function attributeLabels()
+	    {
+			return array(
+			);
+	    }
 
-snippet register-js
-	Yii::app()->clientScript->registerScript('${1:scriptid}', "
-		//${2:jscode}
-	", ${3:CClientScript::POS_READY});
-	${4}
+	    public function search()
+	    {
+			$criteria = new CDbCriteria();
+
+			return new CActiveDataProvider('${4:className}', array(
+				'criteria' => $criteria,
+			));
+	    }${5}
+	}
