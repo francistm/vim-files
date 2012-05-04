@@ -27,3 +27,11 @@ set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,utf-16,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
 :au BufRead,BuFNewFile *.{md,mkd,mkdn,mdwn,mdown,markdown} set wrap
+
+" 键盘键位映射
+
+" 切换窗口键位映射
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
