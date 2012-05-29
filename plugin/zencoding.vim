@@ -1,8 +1,8 @@
 "=============================================================================
 " File: zencoding.vim
 " Author: Yasuhiro Matsumoto <mattn.jp@gmail.com>
-" Last Change: 25-Jan-2011.
-" Version: 0.53
+" Last Change: 29-May-2012.
+" Version: 0.72
 " WebPage: http://github.com/mattn/zencoding-vim
 " Description: vim plugins for HTML and CSS hi-speed coding.
 " SeeAlso: http://code.google.com/p/zen-coding/
@@ -78,6 +78,10 @@ if !exists('g:zencoding_debug')
   let g:zencoding_debug = 0
 endif
 
+if !exists('g:zencoding_curl_command')
+  let g:zencoding_curl_command = 'curl -s -L -A Mozilla/5.0'
+endif
+
 if exists('g:use_zen_complete_tag') && g:use_zen_complete_tag
   setlocal omnifunc=zencoding#CompleteTag
 endif
@@ -93,10 +97,10 @@ function! s:install_plugin()
   \ {'mode': 'n', 'var': 'user_zen_expandabbr_key', 'key': ',', 'plug': 'ZenCodingExpandNormal', 'func': ':call zencoding#expandAbbr(3)<cr>'},
   \ {'mode': 'i', 'var': 'user_zen_expandword_key', 'key': ';', 'plug': 'ZenCodingExpandWord', 'func': '<c-g>u<esc>:call zencoding#expandAbbr(1)<cr>a'},
   \ {'mode': 'n', 'var': 'user_zen_expandword_key', 'key': ',', 'plug': 'ZenCodingExpandWord', 'func': ':call zencoding#expandAbbr(1)<cr>'},
-  \ {'mode': 'i', 'var': 'user_zen_balancetaginward_key', 'key': 'd', 'plug': 'ZenCodingBalanceTagInwardInsert', 'func': '<esc>:call zencoding#balanceTag(1)<cr>a'},
+  \ {'mode': 'i', 'var': 'user_zen_balancetaginward_key', 'key': 'd', 'plug': 'ZenCodingBalanceTagInwardInsert', 'func': '<esc>:call zencoding#balanceTag(1)<cr>'},
   \ {'mode': 'n', 'var': 'user_zen_balancetaginward_key', 'key': 'd', 'plug': 'ZenCodingBalanceTagInwardNormal', 'func': ':call zencoding#balanceTag(1)<cr>'},
   \ {'mode': 'v', 'var': 'user_zen_balancetaginward_key', 'key': 'd', 'plug': 'ZenCodingBalanceTagInwardVisual', 'func': ':call zencoding#balanceTag(2)<cr>'},
-  \ {'mode': 'i', 'var': 'user_zen_balancetagoutward_key', 'key': 'D', 'plug': 'ZenCodingBalanceTagOutwardInsert', 'func': '<esc>:call zencoding#balanceTag(-1)<cr>a'},
+  \ {'mode': 'i', 'var': 'user_zen_balancetagoutward_key', 'key': 'D', 'plug': 'ZenCodingBalanceTagOutwardInsert', 'func': '<esc>:call zencoding#balanceTag(-1)<cr>'},
   \ {'mode': 'n', 'var': 'user_zen_balancetagoutward_key', 'key': 'D', 'plug': 'ZenCodingBalanceTagOutwardNormal', 'func': ':call zencoding#balanceTag(-1)<cr>'},
   \ {'mode': 'v', 'var': 'user_zen_balancetagoutward_key', 'key': 'D', 'plug': 'ZenCodingBalanceTagOutwardVisual', 'func': ':call zencoding#balanceTag(-2)<cr>'},
   \ {'mode': 'i', 'var': 'user_zen_next_key', 'key': 'n', 'plug': 'ZenCodingNext', 'func': '<esc>:call zencoding#moveNextPrev(0)<cr>'},
@@ -107,6 +111,7 @@ function! s:install_plugin()
   \ {'mode': 'n', 'var': 'user_zen_imagesize_key', 'key': 'i', 'plug': 'ZenCodingImageSize', 'func': ':call zencoding#imageSize()<cr>'},
   \ {'mode': 'i', 'var': 'user_zen_togglecomment_key', 'key': '/', 'plug': 'ZenCodingToggleComment', 'func': '<esc>:call zencoding#toggleComment()<cr>a'},
   \ {'mode': 'n', 'var': 'user_zen_togglecomment_key', 'key': '/', 'plug': 'ZenCodingToggleComment', 'func': ':call zencoding#toggleComment()<cr>'},
+  \ {'mode': 'v', 'var': 'user_zen_mergelines_key', 'key': 'm', 'plug': 'ZenCodingMergeLines', 'func': ':call zencoding#mergeLines()<cr>'},
   \ {'mode': 'i', 'var': 'user_zen_splitjointag_key', 'key': 'j', 'plug': 'ZenCodingSplitJoinTagInsert', 'func': '<esc>:call zencoding#splitJoinTag()<cr>a'},
   \ {'mode': 'n', 'var': 'user_zen_splitjointag_key', 'key': 'j', 'plug': 'ZenCodingSplitJoinTagNormal', 'func': ':call zencoding#splitJoinTag()<cr>'},
   \ {'mode': 'i', 'var': 'user_zen_removetag_key', 'key': 'k', 'plug': 'ZenCodingRemoveTag', 'func': '<esc>:call zencoding#removeTag()<cr>a'},
@@ -121,10 +126,14 @@ function! s:install_plugin()
       exe item.mode . 'noremap <plug>' . item.plug . ' ' . item.func
     endif
     if !exists('g:' . item.var)
-      exe 'let g:' . item.var . " = '" . g:user_zen_leader_key . item.key . "'"
     endif
-    if len(maparg(eval('g:' . item.var), item.mode)) == 0
-      exe item.mode . 'map <unique> ' . eval('g:' . item.var) . ' <plug>' . item.plug
+    if exists('g:' . item.var)
+      let key = eval('g:' . item.var)
+    else
+      let key = g:user_zen_leader_key . item.key
+    endif
+    if len(maparg(key, item.mode)) == 0
+      exe item.mode . 'map <unique> ' . key . ' <plug>' . item.plug
     endif
   endfor
 endfunction
