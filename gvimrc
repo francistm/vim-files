@@ -17,7 +17,7 @@ elseif has("win32")
 
 endif
 
-colorscheme peachpuff
+colorscheme pyte
 
 set nobackup
 set guioptions-=T
