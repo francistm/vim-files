@@ -14,6 +14,7 @@ set number
 set autoread
 set nobackup
 set hlsearch
+set expandtab
 set autoindent
 set smartindent
 set nocompatible
