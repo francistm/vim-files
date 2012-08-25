@@ -17,7 +17,7 @@ elseif has("win32")
 
 endif
 
-colorscheme pyte
+colorscheme DimGreens
 
 set nobackup
 set guioptions-=T
