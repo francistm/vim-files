@@ -40,3 +40,6 @@ set fileencodings=ucs-bom,utf-8,utf-16,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 	" Shift+方向键 切换标签
 	map <S-Left> :tabp<CR>
 	map <S-Right> :tabn<CR>
+
+    " FuzzyFinder 快捷键映射
+    map <C-p> :FufCoverageFile <CR>
