@@ -13,3 +13,4 @@ this is my own vim config, contained vimrc, gvimrc and some plugins
 * SnipMate
 * NERD Tree
 * Zencoding
+* FuzzyFinder
