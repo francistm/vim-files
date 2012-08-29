@@ -42,4 +42,5 @@ set fileencodings=ucs-bom,utf-8,utf-16,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 	map <S-Right> :tabn<CR>
 
     " FuzzyFinder 快捷键映射
-    map <C-p> :FufCoverageFile <CR>
+    map <C-p><C-p> :FufCoverageFile<CR>
+    map <C-p><C-r> :FufRenewCache<CR>
