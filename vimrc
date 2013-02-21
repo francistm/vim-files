@@ -5,6 +5,7 @@ filetype on
 filetype plugin on
 filetype indent on
 
+set list
 set ruler
 set showcmd
 set showmode
@@ -25,6 +26,7 @@ set softtabstop=4
 set foldmethod=marker
 
 set encoding=utf-8
+set listchars=precedes:«,extends:»,tab:▸·,trail:∙,eol:¶
 set fileencodings=ucs-bom,utf-8,utf-16,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
 :au BufRead,BuFNewFile *.{wiki,md,mkd,mkdn,mdwn,mdown,markdown} set wrap
@@ -38,6 +40,7 @@ set fileencodings=ucs-bom,utf-8,utf-16,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 	map <C-l> <C-W>l
 
     " 标签设置
+    map <A-t> :tabnew<CR>
 	map <S-Left> :tabp<CR>
 	map <S-Right> :tabn<CR>
 
