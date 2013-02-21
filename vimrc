@@ -37,7 +37,7 @@ set fileencodings=ucs-bom,utf-8,utf-16,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 	map <C-h> <C-W>h
 	map <C-l> <C-W>l
 
-	" Shift+方向键 切换标签
+    " 标签设置
 	map <S-Left> :tabp<CR>
 	map <S-Right> :tabn<CR>
 

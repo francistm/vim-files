@@ -1,4 +1,3 @@
-
 if has("mac")
 	set guifont=Monaco:h12
 	set lines=41 columns=145
@@ -23,3 +22,8 @@ colorscheme DimGreens
 set nobackup
 set guioptions-=T
 set langmenu=zh_CN.UTF-8
+
+" 键盘快捷键映射
+    " 标签操作
+    map <A-w> :q<CR> " 关闭当前标签
+    map <A-t> :tabnew<CR> " 打开新标签页
