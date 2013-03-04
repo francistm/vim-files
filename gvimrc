@@ -1,23 +1,23 @@
 if has("mac")
-	set guifont=Monaco:h12
-	set lines=41 columns=145
+    set guifont=Monaco:h12
+    set lines=41 columns=145
 elseif has("win32")
-	set guioptions-=m
-	set lines=40 columns=110
+    set guioptions-=m
+    set lines=40 columns=110
 
-	set guifont=Bitstream\ Vera\ Sans\ Mono:h12:cANSI
-	set guifontwide=YaHei\ Mono:h11:cGB2312
+    set guifont=Bitstream\ Vera\ Sans\ Mono:h9:cANSI
+    set guifontwide=YaHei\ Mono:h11:cGB2312
 
-	source $VIMRUNTIME/delmenu.vim
-	source $VIMRUNTIME/menu.vim
-	source $VIMRUNTIME/mswin.vim
-	source $VIMRUNTIME/vimrc_example.vim
+    source $VIMRUNTIME/delmenu.vim
+    source $VIMRUNTIME/menu.vim
+    source $VIMRUNTIME/mswin.vim
+    source $VIMRUNTIME/vimrc_example.vim
 
-	language message zh_CN.UTF-8
+    language message zh_CN.UTF-8
 
 endif
 
-colorscheme DimGreens
+colorscheme github
 
 set nobackup
 set guioptions-=T
