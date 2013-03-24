@@ -1,5 +1,5 @@
 syntax on
-colorscheme ron
+colorscheme jellybeans
 
 filetype on
 filetype plugin on
