@@ -32,7 +32,7 @@ set fileencodings=ucs-bom,utf-8,utf-16,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 :au BufRead,BuFNewFile *.{wiki,md,mkd,mkdn,mdwn,mdown,markdown} set wrap
 :au BufRead,BuFNewFile *.{wiki,md,mkd,mkdn,mdwn,mdown,markdown} set foldmethod=manual
 
-let g:fuf_coveragefile_exclude='\v\~$|\.DS_Store$|assets|framework'
+let g:fuf_coveragefile_exclude='\v\~$|\.DS_Store$|^assets|framework'
 
 " 键盘键位映射
     " Ctrl+hjkl 切换编辑窗口 
