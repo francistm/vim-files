@@ -32,16 +32,18 @@ set fileencodings=ucs-bom,utf-8,utf-16,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 :au BufRead,BuFNewFile *.{wiki,md,mkd,mkdn,mdwn,mdown,markdown} set wrap
 :au BufRead,BuFNewFile *.{wiki,md,mkd,mkdn,mdwn,mdown,markdown} set foldmethod=manual
 
+let g:fuf_coveragefile_exclude='\v\~$|\.DS_Store$|assets|framework'
+
 " 键盘键位映射
-	" Ctrl+hjkl 切换编辑窗口 
-	map <C-j> <C-W>j
-	map <C-k> <C-W>k
-	map <C-h> <C-W>h
-	map <C-l> <C-W>l
+    " Ctrl+hjkl 切换编辑窗口 
+    map <C-j> <C-W>j
+    map <C-k> <C-W>k
+    map <C-h> <C-W>h
+    map <C-l> <C-W>l
 
     " 标签设置
-	map <S-Left> :tabp<CR>
-	map <S-Right> :tabn<CR>
+    map <S-Left> :tabp<CR>
+    map <S-Right> :tabn<CR>
 
     " FuzzyFinder 快捷键映射
     map <C-p><C-p> :FufCoverageFile<CR>

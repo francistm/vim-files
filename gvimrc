@@ -17,8 +17,6 @@ elseif has("win32")
 
 endif
 
-colorscheme jellybeans
-
 set nobackup
 set guioptions-=T
 set langmenu=zh_CN.UTF-8
