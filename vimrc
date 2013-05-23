@@ -32,6 +32,8 @@ set fileencodings=ucs-bom,utf-8,utf-16,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 :au BufRead,BuFNewFile *.{wiki,md,mkd,mkdn,mdwn,mdown,markdown} set wrap
 :au BufRead,BuFNewFile *.{wiki,md,mkd,mkdn,mdwn,mdown,markdown} set foldmethod=manual
 
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
 " 键盘键位映射
     " Ctrl+hjkl 切换编辑窗口 
     map <C-j> <C-W>j
