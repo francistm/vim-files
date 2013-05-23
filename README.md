@@ -9,8 +9,6 @@ this is my own vim config, contained vimrc, gvimrc and some plugins
 
 ## Shortcut
 * `Alt + T` : open new tab
-* `Ctrl + P, Ctrl + R` : renew FuzzyFinder cache
-* `Ctrl + P, Ctrl + P` : open FuzzyFinder coverage
 * `Shift + Left Arrow` : preview tab
 * `Shift + Right Arrow` : next tab
 
@@ -20,4 +18,3 @@ this is my own vim config, contained vimrc, gvimrc and some plugins
 * SnipMate
 * NERD Tree
 * Zencoding
-* FuzzyFinder
