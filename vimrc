@@ -32,7 +32,7 @@ set fileencodings=ucs-bom,utf-8,utf-16,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 :au BufRead,BuFNewFile *.{wiki,md,mkd,mkdn,mdwn,mdown,markdown} set wrap
 :au BufRead,BuFNewFile *.{wiki,md,mkd,mkdn,mdwn,mdown,markdown} set foldmethod=manual
 
-if has("mac")
+if has("mac") || has("unix")
     set runtimepath^=~/.vim/bundle/ctrlp.vim
 elseif has("win32")
     set runtimepath^=~/vimfiles/bundle/ctrlp.vim
