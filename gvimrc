@@ -8,8 +8,8 @@ elseif has("win32")
     set guioptions-=m
     set lines=40 columns=110
 
-    set guifont=Bitstream\ Vera\ Sans\ Mono:h9:cANSI
-    set guifontwide=YaHei\ Mono:h9:cGB2312
+    set guifont=Bitstream\ Vera\ Sans\ Mono:h12:cANSI
+    set guifontwide=YaHei\ Mono:h12:cGB2312
 
     source $VIMRUNTIME/delmenu.vim
     source $VIMRUNTIME/menu.vim
