@@ -14,6 +14,7 @@ set nowrap
 set number
 set autoread
 set nobackup
+set noundofile
 set hlsearch
 set expandtab
 set autoindent

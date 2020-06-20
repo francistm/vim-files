@@ -21,6 +21,7 @@ elseif has("win32")
 endif
 
 set nobackup
+set noundofile
 set guioptions-=T
 set langmenu=zh_CN.UTF-8
 
