@@ -40,12 +40,22 @@ elseif has("win32")
 endif
 
 " 键盘键位映射
-    " Ctrl+hjkl 切换编辑窗口 
-    map <C-j> <C-W>j
-    map <C-k> <C-W>k
-    map <C-h> <C-W>h
-    map <C-l> <C-W>l
+" Ctrl+hjkl 切换编辑窗口 
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
 
-    " 标签设置
-    map <S-Left> :tabp<CR>
-    map <S-Right> :tabn<CR>
+" 标签设置
+map <S-Left> :tabp<CR>
+map <S-Right> :tabn<CR>
+
+" go-vim 配置部分
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 
