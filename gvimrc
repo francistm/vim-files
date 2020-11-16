@@ -12,9 +12,9 @@ elseif has("win32")
     set guifontwide=YaHei\ Mono:h12:cGB2312
 
     source $VIMRUNTIME/delmenu.vim
-    source $VIMRUNTIME/menu.vim
-    source $VIMRUNTIME/mswin.vim
-    source $VIMRUNTIME/vimrc_example.vim
+    " source $VIMRUNTIME/menu.vim
+    " source $VIMRUNTIME/mswin.vim
+    " source $VIMRUNTIME/vimrc_example.vim
 
     language message zh_CN.UTF-8
 
