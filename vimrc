@@ -17,9 +17,11 @@ set nobackup
 set noundofile
 set hlsearch
 set expandtab
-set autoindent
-set smartindent
+" set autoindent
+" set smartindent
 set nocompatible
+set smartcase
+set incsearch
 
 set tabstop=2
 set shiftwidth=2
