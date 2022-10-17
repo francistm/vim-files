@@ -1,5 +1,5 @@
 if has("mac")
-    set guifont=Monaco:h12
+    set guifont=Ubuntu\ Mono:h14
     set lines=41 columns=145
 elseif has("unix")
     set guioptions-=m

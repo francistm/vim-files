@@ -17,11 +17,12 @@ set nobackup
 set noundofile
 set hlsearch
 set expandtab
-" set autoindent
-" set smartindent
 set nocompatible
+set ignorecase
 set smartcase
 set incsearch
+set splitright
+set splitbelow
 
 set tabstop=2
 set shiftwidth=2
@@ -30,7 +31,8 @@ set foldmethod=marker
 
 set encoding=utf-8
 set listchars=precedes:«,extends:»,tab:▸·,trail:∙,eol:¶
-set fileencodings=ucs-bom,utf-8,utf-16,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set fileencoding=utf-8
+" set fileencodings=ucs-bom,utf-8,utf-16,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
 if has("mac") || has("unix")
     set runtimepath^=~/.vim/bundle/ctrlp.vim
