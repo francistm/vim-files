@@ -13,9 +13,3 @@ this is my own vim config, contained vimrc, gvimrc and some plugins
 * `Shift + Right Arrow` : next tab
 * `Ctrl + P` : open ctrlp file list
 
-## Plugins
-
-* ctrlp
-* Matchit
-* SnipMate
-* Zencoding

@@ -17,15 +17,13 @@ elseif has("win32")
     " source $VIMRUNTIME/vimrc_example.vim
 
     language message zh_CN.UTF-8
-
 endif
 
 set nobackup
 set noundofile
 set guioptions-=T
 set langmenu=zh_CN.UTF-8
+colorscheme nightfly
 
-" 键盘快捷键映射
-    " 标签操作
-    map <A-w> :q<CR> " 关闭当前标签
-    map <A-t> :tabnew<CR> " 打开新标签页
+map <A-w> :q<CR>
+map <A-t> :tabnew<CR>
